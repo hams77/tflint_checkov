@@ -1,6 +1,6 @@
 variable "ami" {
   description = "EC2 instance AMI ID"
-  default     = "ami-05c0f5389589545b7"
+  default     = "ami-0287a05f0ef0e9d9a"
 }
 
 variable "instance_type" {
@@ -16,23 +16,23 @@ variable "availability_zone" {
 
 variable "iam_instance_profile" {
   description = "EC2 instance IAM instance profile name"
-  default     = "pavan"
+  default     = " "
 }
 
 variable "key_name" {
   description = "EC2 instance key pair name"
-  default     = "demo-key"
+  default     = "key_pair"
 }
 
 variable "security_groups" {
   description = "Security group for the EC2 instance"
   type        = list(string)
-  default     = []
+  default     = ["sg-041b222c37b24ca57"]
 }
 
 variable "subnet_id" {
   description = "The subnet ID for the EC2 instance"
-  default     = "subnet-0e41453c9b1028803"  # Update with a valid subnet ID
+  default     = "subnet-01b4c3d60dbe562bf"  # Update with a valid subnet ID
 }
 
 variable "tags" {
