@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "ap-south-1"
-  version = "2"
-}
 rule "terraform_required_providers" {
   enabled = true
 
@@ -9,6 +5,11 @@ rule "terraform_required_providers" {
   source = true
   version = true
 }
+provider "aws" {
+  region = "ap-south-1"
+  version = "2"
+}
+
 resource "aws_instance" "example" {
   ebs_optimized = true
   ami                    = var.ami
