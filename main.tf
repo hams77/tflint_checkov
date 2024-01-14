@@ -20,5 +20,8 @@ resource "aws_instance" "example" {
 root_block_device {
  encrypted     = true
  }
-required_version = ">= 1.0" 
+
+}
+terraform {
+  required_version = ">= 1.0" 
 }
