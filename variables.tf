@@ -1,13 +1,11 @@
 variable "ami" {
-  description = "ID of AMI to use for the instance"
-  type        = string
-  default     = null
+  description = "EC2 instance AMI ID"
+  default     = "ami-0287a05f0ef0e9d9a"
 }
 
 variable "instance_type" {
-  description = "The type of instance to start"
-  type        = string
-  default     = "t3.micro"
+  description = "EC2 instance type"
+  default     = "t2.micro"
 }
 
 variable "availability_zone" {
@@ -17,15 +15,13 @@ variable "availability_zone" {
 }
 
 variable "iam_instance_profile" {
-  description = "IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile"
-  type        = string
-  default     = null
+  description = "EC2 instance IAM instance profile name"
+  default     = " "
 }
 
 variable "key_name" {
-  description = "Key name of the Key Pair to use for the instance; which can be managed using the `aws_key_pair` resource"
-  type        = string
-  default     = null
+  description = "EC2 instance key pair name"
+  default     = "key_pair"
 }
 
 variable "security_groups" {
@@ -35,11 +31,9 @@ variable "security_groups" {
 }
 
 variable "subnet_id" {
-  description = "The VPC Subnet ID to launch in"
-  type        = string
-  default     = null
+  description = "The subnet ID for the EC2 instance"
+  default     = "subnet-01b4c3d60dbe562bf"  # Update with a valid subnet ID
 }
-
 
 variable "tags" {
   type    = map(string)
@@ -54,23 +48,7 @@ variable "region" {
   default = "ap-south-1"
 }
 
-variable "monitoring" {
-  description = "If true, the launched EC2 instance will have detailed monitoring enabled"
-  type        = bool
-  default     = null
-}
-
-variable "metadata_options" {
-  description = "Customize the metadata options of the instance"
-  type        = map(string)
-  default = {
-    "http_endpoint"               = "enabled"
-    "http_tokens"                 = "required"
-    
-  }
-}
-
 variable "s3_bucket" {
   type    = string
-  default = "hamsbucket1"
+  default = "pavanssonixbucket1"
 }
