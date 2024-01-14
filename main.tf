@@ -1,13 +1,7 @@
-rule "terraform_required_providers" {
-  enabled = true
 
-  # defaults
-  source = true
-  version = true
-}
 provider "aws" {
   region = "ap-south-1"
-  version = "2"
+
 }
 
 resource "aws_instance" "example" {
@@ -32,9 +26,5 @@ root_block_device {
 }
 terraform {
   required_version = ">= 1.0" 
-required_providers {
-    aws = {
-      version = "~> 2"
-    }
-  }
+
 }
