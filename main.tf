@@ -6,7 +6,7 @@ rule "terraform_required_providers" {
   version = true
 }
 provider "aws" {
-  region = "ap-south-1"
+  region = var.region
 version =  "2"
 }
 
@@ -21,10 +21,7 @@ resource "aws_instance" "example" {
   subnet_id              = var.subnet_id
   tags                   = var.tags
   monitoring           =   var.monitoring
-   metadata_options {
-       http_endpoint = "enabled"
-       http_tokens   = "required"
-  }
+   metadata_options = var.metadata_options
 root_block_device {
  encrypted     = true
  }
