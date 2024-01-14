@@ -3,7 +3,7 @@ rule "terraform_required_providers" {
 
   # defaults
   source = true
-  version = true
+  version = false
 }
 provider "aws" {
   region = var.region
