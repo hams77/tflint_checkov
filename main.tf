@@ -20,7 +20,7 @@ resource "aws_instance" "example" {
   security_groups        = var.security_groups
   subnet_id              = var.subnet_id
   tags                   = var.tags
-  monitoring           =   true
+  monitoring           =   var.monitoring
    metadata_options {
        http_endpoint = "enabled"
        http_tokens   = "required"
