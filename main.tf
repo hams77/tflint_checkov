@@ -7,7 +7,6 @@ rule "terraform_required_providers" {
 }
 provider "aws" {
   region = var.region
- version = "~> 2"
 }
 
 resource "aws_instance" "example" {
