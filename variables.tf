@@ -72,5 +72,5 @@ variable "metadata_options" {
 
 variable "s3_bucket" {
   type    = string
-  default = "pavanssonixbucket1"
+  default = "hamsbucket1"
 }
