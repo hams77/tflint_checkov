@@ -12,7 +12,7 @@ resource "aws_instance" "example" {
   security_groups        = var.security_groups
   subnet_id              = var.subnet_id
   tags                   = var.tags
-  monitoring           = var.monitoring
+  monitoring           =   true
   dynamic "metadata_options" {
     for_each = length(var.metadata_options) > 0 ? [var.metadata_options] : []
 
