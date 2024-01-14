@@ -1,12 +1,5 @@
-rule "terraform_required_providers" {
-  enabled = true
-
-  # defaults
-  source = true
-  version = true
-}
 provider "aws" {
-  region = var.region
+  region = "ap-south-1"
 }
 
 resource "aws_instance" "example" {
@@ -19,20 +12,4 @@ resource "aws_instance" "example" {
   security_groups        = var.security_groups
   subnet_id              = var.subnet_id
   tags                   = var.tags
-  monitoring           =   var.monitoring
-s3_bucket = var.s3_bucket
-   metadata_options = var.metadata_options
-root_block_device {
- encrypted     = true
- }
-
-}
-terraform {
-  required_version = ">= 1.0" 
-required_providers {
-    aws = {
- source  = "hashicorp/template"
-      version = "~> 2"
-    }
-  }
 }
