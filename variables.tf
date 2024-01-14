@@ -48,6 +48,22 @@ variable "region" {
   default = "ap-south-1"
 }
 
+variable "monitoring" {
+  description = "If true, the launched EC2 instance will have detailed monitoring enabled"
+  type        = bool
+  default     = null
+}
+
+variable "metadata_options" {
+  description = "Customize the metadata options of the instance"
+  type        = map(string)
+  default = {
+    "http_endpoint"               = "enabled"
+    "http_put_response_hop_limit" = 1
+    "http_tokens"                 = "optional"
+  }
+}
+
 variable "s3_bucket" {
   type    = string
   default = "pavanssonixbucket1"
