@@ -2,7 +2,13 @@ provider "aws" {
   region = "ap-south-1"
   version = "2"
 }
+rule "terraform_required_providers" {
+  enabled = true
 
+  # defaults
+  source = true
+  version = true
+}
 resource "aws_instance" "example" {
   ebs_optimized = true
   ami                    = var.ami
