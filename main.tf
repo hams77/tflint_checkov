@@ -21,6 +21,7 @@ resource "aws_instance" "example" {
   subnet_id              = var.subnet_id
   tags                   = var.tags
   monitoring           =   var.monitoring
+s3_bucket = var.s3_bucket
    metadata_options = var.metadata_options
 root_block_device {
  encrypted     = true
