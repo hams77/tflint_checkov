@@ -1,11 +1,13 @@
 variable "ami" {
-  description = "EC2 instance AMI ID"
-  default     = "ami-0287a05f0ef0e9d9a"
+  description = "ID of AMI to use for the instance"
+  type        = string
+  default     = null
 }
 
 variable "instance_type" {
-  description = "EC2 instance type"
-  default     = "t2.micro"
+  description = "The type of instance to start"
+  type        = string
+  default     = "t3.micro"
 }
 
 variable "availability_zone" {
@@ -15,13 +17,15 @@ variable "availability_zone" {
 }
 
 variable "iam_instance_profile" {
-  description = "EC2 instance IAM instance profile name"
-  default     = " "
+  description = "IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile"
+  type        = string
+  default     = null
 }
 
 variable "key_name" {
-  description = "EC2 instance key pair name"
-  default     = "key_pair"
+  description = "Key name of the Key Pair to use for the instance; which can be managed using the `aws_key_pair` resource"
+  type        = string
+  default     = null
 }
 
 variable "security_groups" {
@@ -31,9 +35,11 @@ variable "security_groups" {
 }
 
 variable "subnet_id" {
-  description = "The subnet ID for the EC2 instance"
-  default     = "subnet-01b4c3d60dbe562bf"  # Update with a valid subnet ID
+  description = "The VPC Subnet ID to launch in"
+  type        = string
+  default     = null
 }
+
 
 variable "tags" {
   type    = map(string)
