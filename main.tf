@@ -1,4 +1,10 @@
+rule "terraform_required_providers" {
+  enabled = false
 
+  # defaults
+  source = true
+  version = true
+}
 provider "aws" {
   region = "ap-south-1"
 version =  "2"
